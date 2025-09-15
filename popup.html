@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Blocker</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-width: 350px;
+      min-height: 420px;
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #ff1744;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #111;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px 0 #000a;
+      border: 1.5px solid #222;
+      max-width: 340px;
+      padding: 32px 28px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+    h3 {
+      margin: 0 0 18px 0;
+      font-weight: 600;
+      font-size: 1.4em;
+      letter-spacing: 0.5px;
+      color: #ff1744;
+      text-align: center;
+    }
+    h4 {
+      margin: 24px 0 10px 0;
+      font-weight: 600;
+      color: #ff1744;
+      letter-spacing: 0.2px;
+      font-size: 1.1em;
+      text-align: left;
+    }
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      flex: 1;
+      border: 1.5px solid #ff1744;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+      background: #181818;
+      color: #ff1744;
+      outline: none;
+      transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+    input[type="text"]:focus {
+      background: #111;
+      border: 1.5px solid #ff1744;
+      box-shadow: 0 0 0 2px #ff1744aa;
+    }
+    button {
+      background: #181818;
+      color: #ff1744;
+      border: 1.5px solid #ff1744;
+      border-radius: 10px;
+      padding: 0 18px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0006;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s, border 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 44px;
+    }
+    button:hover, button:focus {
+      background: #111;
+      color: #fff;
+      border: 1.5px solid #ff1744;
+      box-shadow: 0 0 8px 2px #ff1744aa;
+    }
+    ul#blockedList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      min-height: 32px;
+    }
+    ul#blockedList li {
+      background: #181818;
+      color: #ff1744;
+      border-radius: 999px;
+      border: 1.5px solid #ff1744;
+      padding: 7px 16px 7px 12px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: 0 2px 8px #0008;
+      position: relative;
+      gap: 6px;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    }
+    ul#blockedList li .material-icons {
+      font-size: 18px;
+      margin-right: 2px;
+      color: #ff1744;
+      opacity: 0.8;
+    }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #ff1744;
+      font-size: 18px;
+      margin-left: 8px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      outline: none;
+    }
+    .remove-btn:hover, .remove-btn:focus {
+      background: #ff174422;
+      color: #fff;
+      transform: scale(1.2) rotate(12deg);
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      background: #181818;
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff174433;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3><span class="material-icons" style="font-size:1.2em;vertical-align:middle;color:#ff1744;">block</span> Website Blocker</h3>
+    <div class="input-row">
+      <input type="text" id="website" placeholder="example.com">
+      <button id="addBtn"><span class="material-icons" style="font-size:18px;">add_circle</span></button>
+    </div>
+    <h4>Blocked Websites</h4>
+    <ul id="blockedList"></ul>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
