@@ -16,7 +16,8 @@ A simple Chrome Extension that allows users to block and unblock websites dynami
 - Chrome Storage API
 
 ## 📸 Screenshots
-![Popup UI](screenshot.png)  <!-- Add a screenshot later -->
+![Popup UI](popup-ui.png)
+
 
 ## 🚀 How to Install
 1. Clone this repo
